@@ -7,9 +7,9 @@ ONE="\x30\x00\x30\x00\x00\x00"
 TWO="\x30\x00\x31\x00\x00\x00"
 THREE="\x30\x00\x32\x00\x00\x00"
 
-patchlocation00=$(binwalk -R $BIOS_USER$ONE "$1" | grep -oE '^\s*[0-9]+' | head -n1)
-patchlocation01=$(binwalk -R $BIOS_USER$TWO "$1" | grep -oE '^\s*[0-9]+' | head -n1)
-patchlocation02=$(binwalk -R $BIOS_USER$THREE "$1" | grep -oE '^\s*[0-9]+' | head -n1)
+patchlocation00=$(binwalk -R $BIOS_USER$ONE "$1" | grep -oE '^\s*[0-9]+' | tail -n1)
+patchlocation01=$(binwalk -R $BIOS_USER$TWO "$1" | grep -oE '^\s*[0-9]+' | tail -n1)
+patchlocation02=$(binwalk -R $BIOS_USER$THREE "$1" | grep -oE '^\s*[0-9]+' | tail -n1)
 
 offset_fail() {
     echo "!!!Failed to find flash offset bailing out!!!"
