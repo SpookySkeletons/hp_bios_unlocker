@@ -2,3 +2,5 @@ Generic HP BIOS shell script unlocker, should work with most HP laptops and desk
 Requires binwalk and dd to function.
 
 Merely serves to clear the password to let you into the BIOS menu.
+
+Tested on 2nd and 3rd generation Intel HP laptops.
